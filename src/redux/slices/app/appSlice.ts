@@ -19,7 +19,6 @@ export interface IAppState {
 }
 
 const initialState: IAppState = {
-  // theme: LIGHT_THEME,
   mobile: false,
   loading: false,
   globalLoading: false,
@@ -28,7 +27,6 @@ const initialState: IAppState = {
   // language: appLanguageEnum.EN,
   showSidedrawer: false,
   companyLogo: '',
-  // brandTheme: roleEnum.SUPER_ADMIN,
 };
 
 const appSlice = createSlice({
@@ -47,27 +45,17 @@ const appSlice = createSlice({
     setSidebarCollapsed: (state, action: PayloadAction<boolean>) => {
       state.sidebarCollapsed = action.payload;
     },
-    // setAppLanguage: (state, action: PayloadAction<appLanguageEnum>) => {
-    //   state.language = action.payload;
-    // },
-    // setTheme: (state, action: PayloadAction<AppThemeType>) => {
-    //   state.theme = action.payload;
-    // },
     setShowSidedrawer: (state, action: PayloadAction<boolean>) => {
       state.showSidedrawer = action.payload;
     },
     setCompanyLogo: (state, action: PayloadAction<string>) => {
       state.companyLogo = action.payload;
     },
-    // setBrandTheme: (state, action: PayloadAction<roleEnum>) => {
-    //   state.brandTheme = action.payload;
-    // },
   },
 });
 
 export const selectApp = (state: RootState) => state.app;
 export const selectAppLoading = (state: RootState) => state.app?.loading;
-// export const selectAppTheme = (state: RootState) => state.app?.theme;
 
 export const {
   setSidebarCollapsed,
@@ -75,9 +63,7 @@ export const {
   setGlobalLoading,
   setMobile,
   // setAppLanguage,
-  // setTheme,
   setShowSidedrawer,
   setCompanyLogo,
-  // setBrandTheme,
 } = appSlice.actions;
 export default appSlice.reducer;

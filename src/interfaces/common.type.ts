@@ -13,3 +13,11 @@ export type TError = {
 };
 
 export type TAppError = AxiosError<TError>;
+
+export interface IAppResponse<T> {
+  data?: T;
+  success: boolean;
+  code: number;
+  message?: string;
+  title?: string;
+}
